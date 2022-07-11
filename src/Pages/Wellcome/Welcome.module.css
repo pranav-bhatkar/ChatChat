@@ -1,0 +1,21 @@
+.bg_img{
+  margin-top: 45px;
+  width: 100%;
+  max-width: 255px;
+}
+.text_disk{
+  font-size: 14px;
+  margin-top: 75px;
+}
+.text_disk > span{
+  color: #34B7F1;
+}
+.from_txt{
+  margin-top: 45px;
+  margin-bottom: 5px;
+}
+.name_txt{
+  padding: 0;
+  color: #25D366;
+  font-size: 17px;
+}

@@ -1,0 +1,55 @@
+.avatarLabel {
+    color: #009977;
+    margin: 10px 0;
+    display: inline-block;
+    cursor: pointer;
+}
+.pImg{
+    object-fit: cover;
+    border-radius: 50%;
+    background: #ccc;
+}
+.imageWrrapper{
+    width: 110px;
+    height: 110px;
+    border: 3px solid #009977;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.imgCenter{}
+.inp{
+  color: #333;
+    background: #fff;
+    font-weight: 400;
+    height: 30px;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #009977;
+    box-shadow: none;
+    outline: none;
+    transition: all .3s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.inp:focus{
+    border-bottom: 2px solid #009977;
+}
+.inp::placeholder{
+    color: rgba(0,0,0,0.3);
+}
+.spinner {
+    margin-bottom: 20px;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

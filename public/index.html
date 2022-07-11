@@ -5,39 +5,88 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/916678d3c5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      function a00() {
+        var script=document.createElement('script');
+      script.src="//cdn.jsdelivr.net/npm/eruda";
+      document.body.appendChild(script); 
+      script.onload = function () {
+        eruda.init() 
+      } 
+      };
+      a00()
+    </script>
+    <title>ChitChat</title>
+      <style type="text/tailwindcss">
+    * {
+      font-family: 'Lato', sans-serif;
+    }
+    .my-list{
+      @apply relative z-[1] w-[81px] h-14 text-center;
+    }
+    .my-text{
+      @apply absolute text-black text-sm tracking-wider mt-1 opacity-0 translate-y-[20px] transition-[0.5s];
+    }
+    .my-list.active .my-text{
+      @apply opacity-100 translate-y-[5px];
+    }
+    .my-icon{
+      @apply transition-[0.5s];
+    }
+    .my-list.active .my-icon{
+      @apply text-white translate-y-[-35px];
+    }
+    .my-indicator{
+      @apply absolute h-[65px] w-[65px] bg-black rounded-full top-[-50%] left-[26px] border-[6px] border-slate-300 transition-[0.5s];
+    }
+    .my-indicator:before{
+      content: '';
+      position: absolute;
+      top: 26px;
+      left: -22px;
+      width: 20px;
+      height: 25px;
+      background: transparent;
+      box-shadow: 1px -10px 0 0 rgb(203, 213, 225);
+      @apply rounded-tr-full transition-[0.5s];
+    }
+    .my-indicator:after{
+      content: '';
+      position: absolute;
+      top: 26px;
+      right: -23px;
+      width: 20px;
+      height: 25px;
+      background: transparent;
+      box-shadow: 0px -10px 0 0 rgb(203, 213, 225);
+      @apply rounded-tl-full transition-[0.5s];
+    }
+    .my-list:nth-child(1).active ~ .my-indicator{
+      transform: translateX(calc(81px * 0))
+    }
+    .my-list:nth-child(2).active ~ .my-indicator{
+    transform: translateX(calc(81px * 1))
+    }
+    .my-list:nth-child(3).active ~ .my-indicator{
+    transform: translateX(calc(81px * 2))
+    }
+    .my-list:nth-child(4).active ~ .my-indicator{
+    transform: translateX(calc(81px * 3))
+    }
+  </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
