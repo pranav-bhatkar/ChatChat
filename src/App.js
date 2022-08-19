@@ -14,6 +14,10 @@ import Loader from "./components/shared/Loader/Loader";
 import { useConversations } from './contexts/ConversationsProviders';
 import { useContacts } from './contexts/ContactsProvider';
 import { getConversations, getContacts } from "./http";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent } from "firebase/analytics";
+import { FIREBASE_API } from './config';
 
 import {
   // useDispatch,
@@ -27,7 +31,9 @@ function App() {
   const { loading } = useLoadingWithRefresh();
   const { setConversations } = useConversations()
   const { setContacts } = useContacts()
-  
+  const app = initializeApp(FIREBASE_API);
+  const analytics = getAnalytics(app);
+  logEvent(analytics, 'notification_received');
     useEffect(() => {
   const fetchContacts = async () => {
             const owner = user.id;
